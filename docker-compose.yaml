@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  backend:
+    build:
+      context: ./prosperi_backend
+      args:
+        DJANGO_ALLOWED_HOSTS: localhost, api
+        DJANGO_SECRET_KEY: '(#^88xczm^2=yn$r#7%#mw)*%_3j*kqv315%vruc)!ef=32dky'
+        DJANGO_CORS_ORIGIN_WHITELIST: http://localhost
+    command: gunicorn prosperi_backend.wsgi --bind 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+  frontend:
+    build:
+      context: ./prosperi_frontend
+      args:
+        API_URL: http://localhost
+    volumes:
+      - build_folder:/frontend/build
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:8080
+    volumes:
+      - ./webserver/nginx-proxy.conf:/etc/nginx/conf.d/default.conf:ro
+      - build_folder:/var/www/frontend
+    depends_on:
+      - backend
+      - frontend
+volumes:
+  build_folder:
