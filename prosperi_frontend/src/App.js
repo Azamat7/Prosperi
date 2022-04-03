@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { PriceContext } from './context/price';
 import Navigation from "./components/Navigation"
 import WelcomePage from "./components/WelcomePage"
+import PaymentPage from "./components/PaymentPage"
 
 function App() {
   const [price, setPrice] = useState(null);
@@ -34,7 +35,8 @@ function App() {
     <PriceContext.Provider value={price}>
       <div class="h-screen">
         <Navigation />
-        <WelcomePage />
+        {/* <WelcomePage /> */}
+        <PaymentPage />
       </div>
     </PriceContext.Provider>
   );

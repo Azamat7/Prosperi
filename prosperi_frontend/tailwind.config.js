@@ -8,7 +8,7 @@ module.exports = {
         'secondary': '#F9F2E9',
         'btn-primary': '#00AEFF',
         'btn-border-primary': '#448EF6',
-        'red': "#bfdbfe"
+        'offer': "#F4A65A"
       },
     },
     screens: {
