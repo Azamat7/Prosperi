@@ -7,15 +7,9 @@ const PaymentPage = () => {
 
   return (
     <div class="flex flex-col">
-      <div class="">
-        <PaymentPageOffer />
-      </div>
-      <div class="">
-        <PaymentPageSpecialOffer />
-      </div>
-      <div class="">
-        <PaymentPageCheckout />
-      </div>
+      <PaymentPageOffer />
+      <PaymentPageSpecialOffer />
+      <PaymentPageCheckout />
     </div>
   );
 }

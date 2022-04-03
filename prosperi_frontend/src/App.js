@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import axios from 'axios';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
 import { PriceContext } from './context/price';
 import Navigation from "./components/Navigation"
@@ -32,11 +33,16 @@ function App() {
   }, []);
 
   return (
+    
     <PriceContext.Provider value={price}>
       <div class="h-screen">
-        <Navigation />
-        {/* <WelcomePage /> */}
-        <PaymentPage />
+        <BrowserRouter>
+          <Navigation />
+          <Routes>
+            <Route path="/" element={<WelcomePage />} />
+            <Route path="/payment" element={<PaymentPage />} />
+          </Routes>
+        </BrowserRouter>,
       </div>
     </PriceContext.Provider>
   );

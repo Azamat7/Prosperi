@@ -64,7 +64,7 @@ const PaymentPageOffer = () => {
   return (
     <div class="w-screen px-4 flex flex-col items-center font-primary">
         <div class="md:w-[640px]">
-            <p class="text-[28px] md:text-[40px] pt-[38px] md:pt-[45px] font-bold place-self-start">What you get</p>
+            <p class="text-[28px] md:text-[40px] pt-7 md:pt-9 font-bold place-self-start">What you get</p>
             <ChatWithYourCoach />
             <EasyReadings />
             <InvestmentStrategies />

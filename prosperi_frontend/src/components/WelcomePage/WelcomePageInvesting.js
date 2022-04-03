@@ -1,4 +1,5 @@
 import {useEffect, useState, useContext} from 'react';
+import { Link } from "react-router-dom";
 import { PriceContext } from '../../context/price';
 import astrounaut from '../../assets/astronaut.png';
 
@@ -30,7 +31,9 @@ const WelcomePageInvesting = () => {
         </div>
       </div>
       <div class="pt-6 lg:pt-5">
-        <button class="rounded-lg bg-btn-primary text-white h-14 w-72 text-lg lg:text-md font-bold">Start investing now</button>
+        <Link to="/payment">
+          <button class="rounded-lg bg-btn-primary text-white h-14 w-72 text-lg lg:text-md font-bold">Start investing now</button>
+        </Link>
       </div>
     </div>
   );
