@@ -1,4 +1,3 @@
-import {useEffect, useState, useContext} from 'react';
 import one from '../../assets/1.svg';
 import two from '../../assets/2.svg';
 import three from '../../assets/3.svg';
@@ -46,8 +45,8 @@ const InvestmentStrategies = () => {
         <div class="md:grid md:grid-cols-5 pt-[9px] md:pt-10">
             <div class="md:col-span-3 justify-self-start self-end">
                 <div class="flex flex-row items-center space-x-[6px]">
-                    <img src={three} class="h-[38px] md:h-[42px] self-start" />
-                    <p class="text-[22px] md:text-[28px] font-bold md:w-80">Investment strategies of the best</p>
+                    <img src={three} class="h-[38px] md:h-[42px] md:self-start" />
+                    <p class="text-[22px] leading-[30px] md:leading-[40px] md:text-[28px] font-bold md:w-80">Investment strategies of the best</p>
                 </div>
                 <p class="md:w-80 md:pl-11 pt-2 md:pt-3 text-lg font-normal">We carefully pick the key investment rules from the best in their field and compile them in simple-to-follow summaries.</p>
             </div>

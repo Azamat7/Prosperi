@@ -1,4 +1,3 @@
-import {useEffect, useState} from 'react';
 import chat from '../../assets/chat.png';
 
 const WelcomePageChat = () => {

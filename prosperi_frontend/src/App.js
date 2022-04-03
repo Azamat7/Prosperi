@@ -1,7 +1,6 @@
 import {useEffect, useState} from 'react';
-import axios from 'axios';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { v4 as uuidv4 } from 'uuid';
+import getPrice from './services/price';
 import { PriceContext } from './context/price';
 import Navigation from "./components/Navigation"
 import WelcomePage from "./components/WelcomePage"
@@ -10,40 +9,24 @@ import PaymentPage from "./components/PaymentPage"
 function App() {
   const [price, setPrice] = useState(null);
 
-  const getPrice = async () => {
-    let uuid = window.localStorage.getItem('uuid');
-    if (!uuid) {
-      uuid = uuidv4();
-      window.localStorage.setItem('uuid', uuid)
-    }
-
-    await axios.get(`${process.env.REACT_APP_HOST_IP_ADDRESS}/api/price/${uuid}`)
-      .then(response => {
-        setPrice(response.data.price);
-        console.log(response.data);
-      })
-      .catch(err => {
-        console.log(err)
-      }
-    );
-   };
-
   useEffect(() => {
-    getPrice();
+    const setTrialPrice = async () => {
+      const price = await getPrice();
+      setPrice(price);
+    }
+    setTrialPrice();
   }, []);
 
   return (
     
     <PriceContext.Provider value={price}>
-      <div class="h-screen">
-        <BrowserRouter>
-          <Navigation />
-          <Routes>
-            <Route path="/" element={<WelcomePage />} />
-            <Route path="/payment" element={<PaymentPage />} />
-          </Routes>
-        </BrowserRouter>,
-      </div>
+      <BrowserRouter>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<WelcomePage />} />
+          <Route path="/payment" element={<PaymentPage />} />
+        </Routes>
+      </BrowserRouter>
     </PriceContext.Provider>
   );
 }

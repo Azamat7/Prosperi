@@ -1,4 +1,3 @@
-import {useEffect, useState} from 'react';
 import WelcomePageInvesting from './WelcomePageInvesting';
 import WelcomePageMission from './WelcomePageMission';
 import WelcomePageChat from './WelcomePageChat';

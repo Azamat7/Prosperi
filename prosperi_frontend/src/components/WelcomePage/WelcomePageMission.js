@@ -1,4 +1,3 @@
-import {useEffect, useState} from 'react';
 import astrounautOnMoon from '../../assets/astronaut_on_moon.png';
 
 const WelcomePageMission = () => {

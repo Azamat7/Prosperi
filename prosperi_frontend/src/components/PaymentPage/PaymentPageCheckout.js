@@ -1,5 +1,3 @@
-import {useEffect, useState, useContext} from 'react';
-import { PriceContext } from '../../context/price';
 import paymentMethods from '../../assets/payment_methods.svg';
 
 

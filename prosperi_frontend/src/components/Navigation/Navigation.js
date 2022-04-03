@@ -1,4 +1,3 @@
-import {useEffect, useState} from 'react';
 import { Link, useLocation } from "react-router-dom";
 import logo from '../../assets/logo.svg';
 import questionMark from '../../assets/question_mark.svg';
