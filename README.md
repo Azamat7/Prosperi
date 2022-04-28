@@ -3,7 +3,7 @@ The app was written on React + tailwind on the frontend and Django REST Framewor
 
 ## Hosted version
 
-#### You can access the web application hosted on DigitalOcean: http://157.245.66.7/
+#### You can access the web application hosted on DigitalOcean: http://157.245.66.7/ (no longer the case)
 
 
 ## Usage
